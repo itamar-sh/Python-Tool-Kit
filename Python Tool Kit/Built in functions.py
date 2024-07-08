@@ -182,14 +182,3 @@ c, v = zip(*result)
 print(f'c ={c}\t\tv = {v}')
 a1, a2 = zip(*[[1, "one"], [2, "two"], [3, "three"]])
 print(f'a1 ={a1}\t\ta2 = {a2}')  # a1 =(1, 2, 3)		a2 = ('one', 'two', 'three')
-a1, a2 = zip(*[(1, "one"), (2, "two"), (3, "three")])
-print(f'a1 ={a1}\t\ta2 = {a2}')  # a1 =(1, 2, 3)		a2 = ('one', 'two', 'three')
-
-
-
-
-
-
-
-
-
