@@ -1,0 +1,10 @@
+name,time_frame,num_of_members,constraint
+חפק,4,4,"{""commander_level"": ""פלוגה"", ""num_of_commanders"": 1}"
+שג,4,2,"{}"
+תפוז,4,1,"{}"
+סיור,8,3,"{""commander_level"": ""כיתה"", ""num_of_commanders"": 1}"
+כרמל,12,5,"{""commander_level"": ""כיתה"", ""num_of_commanders"": 1}"
+תורן מטבח,24,2,"{}"
+תורן פלוגה,24,1,"{}"
+חמל,8,1,"{}"
+מפקד מוצב,4,1,"{""commander_level"": ""מחלקה"", ""num_of_commanders"": 1}"

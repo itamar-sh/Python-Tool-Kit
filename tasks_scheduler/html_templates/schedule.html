@@ -1,0 +1,94 @@
+<!-- template.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Table</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+        th {
+            background-color: #b8cce4;
+            color: rgb(0, 0, 0);
+        }
+
+        td {
+            background-color: #ecf0f1;
+        }
+
+        th:first-child,
+        td:first-child {
+            background-color: #ebf1de;
+            color: rgb(0, 0, 0);
+        }
+
+        th, td:first-child {
+            left: 0;
+        }
+
+        th:first-child {
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th style="background-color: #d8e4bc;"></th>
+                {% for assignment_name_index in range(assignments_names_labels|length) %}
+                    {% set colspan = assignments_names_spans[assignment_name_index] %}
+                    <th colspan="{{ colspan }}">{{ assignments_names_labels[assignment_name_index] }}</th>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>יום</th>
+                <th style="background-color: #d8e4bc;">שעה</th>
+                {% for job_name in time_table_names.columns %}
+                    <th>{{ job_name }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row_index in range(hours_row|length) %}
+                <tr>
+                    {% if hours_row[row_index][0] == "0" or row_index == 0 %}
+                        <th>{{ hours_row[row_index].split(" ")[1] }}</th>
+                    {% else %}
+                        <th></th>
+                    {% endif %}
+                    <th style="background-color: #d8e4bc;">{{ hours_row[row_index].split(" ")[0] }}:00</th>
+                    {% for col_index in range(time_table_names.shape[1]) %}
+                        {% set name = time_table_names.iloc[row_index, col_index] %}
+                        {% set rowspan = time_table_spans.iloc[row_index, col_index] %}
+                        {% if name != "Empty soldier" %}
+                            <td rowspan="{{ rowspan }}">{{ name }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

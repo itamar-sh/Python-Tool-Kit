@@ -1,0 +1,627 @@
+<!-- template.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Table</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #b8cce4;
+            color: rgb(0, 0, 0);
+        }
+
+        td {
+            background-color: #ecf0f1;
+        }
+
+        th:first-child,
+        td:first-child {
+            background-color: #ebf1de;
+            color: rgb(0, 0, 0);
+        }
+
+        th, td:first-child {
+            position: sticky;
+            left: 0;
+        }
+
+        th:first-child {
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>משימות</th>
+                
+                    <th>מפקד חפק</th>
+                
+                    <th>חפק 1</th>
+                
+                    <th>חפק 2</th>
+                
+                    <th>חפק 3</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <th>13 Wednesday</th>
+                    
+                        
+                        
+                        
+                            <td rowspan="4">לונטל ניר</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">אבורבה נועם</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">אדרי אריאל</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">אביטן אלעד</td>
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>14 Wednesday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>15 Wednesday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>16 Wednesday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>17 Wednesday</th>
+                    
+                        
+                        
+                        
+                            <td rowspan="4">לחיאני עמית</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">איטח אסף</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">אילוז אוראל</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">אלגאווי שלום</td>
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>18 Wednesday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>19 Wednesday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>20 Wednesday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>21 Wednesday</th>
+                    
+                        
+                        
+                        
+                            <td rowspan="4">לונטל ניר</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">אליאסזדה משה</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">אליו מלסה</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">אמויאל בר</td>
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>22 Wednesday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>23 Wednesday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>0 Thursday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>1 Thursday</th>
+                    
+                        
+                        
+                        
+                            <td rowspan="4">לחיאני עמית</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">אמסלם ירדן</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">אנגלר יאיר</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">אנגל גיא</td>
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>2 Thursday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>3 Thursday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>4 Thursday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>5 Thursday</th>
+                    
+                        
+                        
+                        
+                            <td rowspan="4">לונטל ניר</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">אנקרי יקיר</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">בארי דותן</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">בירמן ולדימיר</td>
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>6 Thursday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>7 Thursday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>8 Thursday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>9 Thursday</th>
+                    
+                        
+                        
+                        
+                            <td rowspan="4">לחיאני עמית</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">בלמכר ישראל</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">בן ארי עקיבא</td>
+                        
+                    
+                        
+                        
+                        
+                            <td rowspan="4">בן דוד ינון</td>
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>10 Thursday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>11 Thursday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+                <tr>
+                    <th>12 Thursday</th>
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                </tr>
+            
+        </tbody>
+    </table>
+</body>
+</html>
