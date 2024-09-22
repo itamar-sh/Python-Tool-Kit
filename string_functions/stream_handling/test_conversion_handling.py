@@ -1,5 +1,5 @@
 import pytest
-from conversion_handling import parse_conversation  # Replace 'your_module' with the actual name of your module
+from string_functions.stream_handling.conversion_handling import parse_conversation  # Replace 'your_module' with the actual name of your module
 
 def test_basic_conversation():
     text = """out: Is this Brad?
