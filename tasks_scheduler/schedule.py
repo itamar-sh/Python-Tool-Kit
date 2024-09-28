@@ -145,7 +145,7 @@ class Schedule:
     def soldier_next_assignment(self, last_row_index, time_table, soldier_name):
         for row_index, (hour, row) in enumerate(time_table.iterrows()):
             if row_index > last_row_index:
-                for assignment_name in time_table.columns: 
+                for assignment_name in time_table.columns:
                     if row[assignment_name] == soldier_name:
                         return row_index
         return len(time_table) - 1
@@ -163,7 +163,7 @@ class Schedule:
             cur_soldier = time_table.iat[0, column_index]
             cur_soldier_appearances = 1
             # import ipdb; ipdb.set_trace()
-            for same_soldier_index in range(1, len(time_table)): 
+            for same_soldier_index in range(1, len(time_table)):
                 if pd.isna(cur_soldier):
                     break
 
@@ -197,8 +197,8 @@ class Schedule:
             for partner in constraint.partner_names:
                 if partner in soldiers_on_the_same_assignment:
                    constraint_score += 1
-        return constraint_score 
-    
+        return constraint_score
+
     def assignment_contraints_score(self, time_table):
         constraint_score = 0
         for assignment in self.company.assignments:
@@ -216,7 +216,7 @@ class Schedule:
                     # import ipdb; ipdb.set_trace()
                     commander_level_score += self.how_good_job_description_fit_commander_level(soldier_job_description, commander_level)
         return commander_level_score
-    
+
     def how_good_job_description_fit_commander_level(self, soldier_job_description, commander_level_required):
         commander_level_table = {HIGH_LEVEL: 3, MID_LEVEL: 2, LOW_LEVEL: 1}
         soldier_level = self.find_soldier_level(soldier_job_description)
@@ -227,7 +227,7 @@ class Schedule:
         if commander_level_table[soldier_level] < commander_level_table[commander_level_required]:
             return commander_level_table[soldier_level]
         return 1
-    
+
     def find_soldier_level(self, soldier_job_description):
         if type(soldier_job_description) is not str:
             return None
@@ -238,7 +238,7 @@ class Schedule:
             return MID_LEVEL
         if LOW_LEVEL in soldier_job_description:
             return LOW_LEVEL
-    
+
     def save_time_table(self, time_table):
         # extract the assignments_names row from the time_table
         assignments_names = time_table.iloc[-1]
@@ -259,19 +259,19 @@ class Schedule:
                 )
                 with open(OUTPUT_HTML_PATH_HTML, "wt") as output_file:
                     output_file.write(html_time_table)
-        
+
         assignments_names_df = pd.DataFrame([assignments_names], columns=time_table.columns)
         time_table = pd.concat([time_table, assignments_names_df], ignore_index=False)
         time_table.to_csv(OUTPUT_HTML_PATH_CSV, index=True)
-    
+
     def load_last_time_table(self):
         self.time_table = pd.read_csv(OUTPUT_HTML_PATH_CSV, index_col=0)
-    
+
     def rearrange_time_table_for_display(self, time_table):
         def _add_soldier_and_row_span(soldiers, row_spans, current_soldier, current_row_span):
             soldiers.append(current_soldier)
             row_spans.append(current_row_span)
-            
+
             # Add empty cells for line all cells on the same row. This is html requirement which avoids slip of cells to new lines.
             for _ in range(current_row_span-1):
                 soldiers.append("Empty soldier")
@@ -313,11 +313,11 @@ class Schedule:
             # Concatenate with the existing results
             soldier_names_df = pd.concat([soldier_names_df, col_names_df], axis=1)
             row_span_df = pd.concat([row_span_df, col_row_span_df], axis=1)
-        
+
         hours_row = time_table.index.tolist()
 
         return soldier_names_df, row_span_df, hours_row
-    
+
     def rearrange_assignments_names_for_display(self, assignments_names):
         assignments_names_labels = []
         assignments_names_spans = []
@@ -334,25 +334,25 @@ class Schedule:
         assignments_names_labels.append(current_assignment_name)
         assignments_names_spans.append(current_row_span)
         return assignments_names_labels, assignments_names_spans
-    
+
     def augment_existing_time_table_with_empty_cells(self, hours_to_extend):
         # need to take the last row and understand the last filled row and add the next row accordingly
         start_time = self.find_right_date(self.time_table.index[-2]) + timedelta(hours=1)
         return pd.concat([self.time_table.iloc[:-1], self.get_empty_tasks_table(hours_to_extend, start_time)], axis=0)
-    
+
     def find_right_date(self, required_date):
         current_time = datetime.now()
         start_time = datetime.strptime(required_date, '%H %A').replace(year=current_time.year, month=current_time.month, day=current_time.day)
-        
+
         # Find the closest required_date to the current datetime - we assume it's in the
         while start_time.strftime('%A') != 'Sunday' or start_time.hour != 23:
             start_time += timedelta(hours=1)
         return start_time
-    
+
     def find_assignment_difficult(self, assignment_name):
         return self.company.find_assignment_by_name(assignment_name).difficult
 
-    
+
 if __name__ == "__main__":
     from company import load_company
     company = load_company()
