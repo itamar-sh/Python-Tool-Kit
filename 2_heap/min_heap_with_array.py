@@ -43,6 +43,6 @@ class MinHeap:
     def getChilds(self, val_index):
         left_index = val_index * 2 + 1
         right_index = val_index * 2 + 2
-        left_child = self.heap[left_child]
-        right_child = self.heap[right_child]
+        left_child = self.heap[left_index]
+        right_child = self.heap[right_index]
         return left_index, left_child, right_index, right_child
