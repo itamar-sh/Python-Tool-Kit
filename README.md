@@ -19,7 +19,7 @@ All the classic and linear sort algorithms, Including Unique conditions.
 Int Manipulation, Math operators, Ascii Table
 
 # 6 - Search
-Search condition in array, Binary Search
+Search condition in array, Binary Search, BFS, DFS
 
 # 7 - OOP
 Abstract Class, static method, class method, contextmanager, asteric
