@@ -20,3 +20,6 @@ right_index = sl.bisect_right(7)  # Bisect right (insertion point to the right o
 occurrences = sl.count(5)
 range_values = sl.irange(3, 9)
 sliced_values = sl.islice(1, 3)
+
+max_val = sl.peekitem(-1)  # get max value - if SortedDict - then return pair (key, value)
+min_val = sl.peekitem(0) # get min value
